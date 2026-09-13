@@ -107,7 +107,7 @@ export default function SessionDetailPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div className="p-4 rounded-xl bg-primary-50 dark:bg-primary-900/20">
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Skill</p>
             <SkillBadge skill={session.skill?.name || session.skillName} color="primary" />

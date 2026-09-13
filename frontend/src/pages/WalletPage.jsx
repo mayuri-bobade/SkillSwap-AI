@@ -41,7 +41,7 @@ export default function WalletPage() {
       {/* Balance */}
       <div className="card gradient-primary text-white text-center py-10">
         <p className="text-white/70 text-sm mb-2">Available Balance</p>
-        <p className="text-5xl font-bold mb-2">{wallet.balance || 0}</p>
+        <p className="text-4xl sm:text-5xl font-bold mb-2">{wallet.balance || 0}</p>
         <p className="text-white/70">Time Tokens</p>
       </div>
 

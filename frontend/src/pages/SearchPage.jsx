@@ -86,7 +86,7 @@ export default function SearchPage() {
         <p className="text-gray-500 dark:text-gray-400">Find people to learn from or teach</p>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
           <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
           <input

@@ -36,7 +36,7 @@ export default function SessionCard({ session, onAccept, onReject, onCancel, onC
 
           {!isCompact && (
             <>
-              <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
+              <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-500">
                 <span className="flex items-center gap-1">
                   <FiClock className="w-4 h-4" />
                   {session.scheduledAt ? format(new Date(session.scheduledAt), 'MMM d, h:mm a') : 'Not scheduled'}
@@ -45,7 +45,7 @@ export default function SessionCard({ session, onAccept, onReject, onCancel, onC
                 <span className="text-primary-500 font-medium">{session.tokens || 1} token(s)</span>
               </div>
 
-              <div className="flex items-center gap-2 mt-4">
+              <div className="flex flex-wrap items-center gap-2 mt-4">
                 {session.status === 'pending' && isTeacher && (
                   <>
                     <button onClick={onAccept} className="btn-accent text-sm py-1.5 px-3 flex items-center gap-1">

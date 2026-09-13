@@ -77,17 +77,26 @@ export default function AdminPage() {
           { icon: FiCalendar, label: 'Total Sessions', value: stats.totalSessions || sessions.length || 0, color: 'secondary' },
           { icon: FiDollarSign, label: 'Tokens Circulated', value: stats.totalTokens || 0, color: 'accent' },
           { icon: FiAlertTriangle, label: 'Active Reports', value: stats.activeReports || 0, color: 'yellow' },
-        ].map((s) => (
+        ].map((s) => {
+          const colorMap = {
+            primary: { bg: 'bg-primary-50 dark:bg-primary-900/30', text: 'text-primary-500 dark:text-primary-400' },
+            secondary: { bg: 'bg-secondary-50 dark:bg-secondary-900/30', text: 'text-secondary-500 dark:text-secondary-400' },
+            accent: { bg: 'bg-accent-50 dark:bg-accent-900/30', text: 'text-accent-500 dark:text-accent-400' },
+            yellow: { bg: 'bg-yellow-50 dark:bg-yellow-900/30', text: 'text-yellow-500 dark:text-yellow-400' },
+          }
+          const colors = colorMap[s.color] || colorMap.primary
+          return (
           <div key={s.label} className="card flex items-center gap-4">
-            <div className={`p-3 rounded-xl bg-${s.color}-50 dark:bg-${s.color}-900/30`}>
-              <s.icon className={`w-6 h-6 text-${s.color}-500 dark:text-${s.color}-400`} />
+            <div className={`p-3 rounded-xl ${colors.bg}`}>
+              <s.icon className={`w-6 h-6 ${colors.text}`} />
             </div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">{s.label}</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-white">{s.value}</p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Tabs */}

@@ -35,7 +35,7 @@ export default function CreateSessionModal({ isOpen, onClose, onSubmit, user }) 
         </div>
         <div>
           <label className="label"><FiCalendar className="inline w-4 h-4 mr-1" />Date & Time</label>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="date"
               className="input flex-1"

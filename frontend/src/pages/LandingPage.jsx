@@ -61,7 +61,7 @@ export default function LandingPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-32 lg:py-40">
+        <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,9 +94,9 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-12 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 lg:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Skill-Swap?</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to exchange skills with others in our community.</p>
           </div>
@@ -122,9 +122,9 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-12 lg:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 lg:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">How It Works</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Three simple steps to start exchanging skills.</p>
           </div>
@@ -155,7 +155,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 gradient-primary">
+      <section className="py-12 lg:py-20 gradient-primary">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -176,9 +176,9 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-12 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 lg:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What Our Users Say</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -206,7 +206,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-12 lg:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Ready to Start Swapping Skills?</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">Join thousands of learners and teachers exchanging skills through time credits.</p>
