@@ -27,7 +27,7 @@ export function SocketProvider({ children }) {
       })
       .catch(() => {})
 
-    const newSocket = io('/', {
+    const newSocket = io(import.meta.env.VITE_API_URL || '/', {
       auth: { token },
       transports: ['websocket', 'polling'],
     })
