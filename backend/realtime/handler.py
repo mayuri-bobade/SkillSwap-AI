@@ -141,12 +141,6 @@ async def send_message(sid, data):
             "conversationId": conversation_id,
         }, room=str(conversation_id))
 
-        # Also emit to sender directly in case they're not in the room yet
-        await sio.emit("new_message", {
-            "message": msg_dict,
-            "conversationId": conversation_id,
-        }, to=sid)
-
         for p in participants:
             if p.user_id != int(user_id):
                 socket_id = online_users.get(str(p.user_id))

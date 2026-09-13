@@ -74,14 +74,18 @@ export default function ChatPage() {
       // Update messages if chat is open
       if (selectedConv && String(data.conversationId) === String(selectedConv)) {
         setMessages((prev) => {
-          const exists = prev.find((m) =>
-            (m._id && m._id === data.message._id) ||
-            (m.content === data.message.content &&
-             (m.sender?._id === data.message.sender?._id || m.sender?.id === data.message.sender?._id) &&
-             Math.abs(new Date(m.createdAt) - new Date(data.message.createdAt)) < 5000)
-          )
+          const incoming = data.message
+          const exists = prev.some((m) => {
+            if (m._id && incoming._id && m._id === incoming._id) return true
+            if (m.id && incoming.id && m.id === incoming.id) return true
+            return (
+              m.content === incoming.content &&
+              String(m.sender?._id || m.sender?.id) === String(incoming.sender?._id || incoming.sender?.id) &&
+              Math.abs(new Date(m.createdAt) - new Date(incoming.createdAt)) < 5000
+            )
+          })
           if (exists) return prev
-          return [...prev, data.message]
+          return [...prev, incoming]
         })
       }
       // Always update conversation list with last message
