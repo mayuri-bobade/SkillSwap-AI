@@ -69,8 +69,6 @@ export function SocketProvider({ children }) {
       setNotifications((prev) => [notification, ...prev])
     })
 
-    newSocket.on('new_message', () => {})
-
     setSocket(newSocket)
     socketRef.current = newSocket
 

@@ -201,7 +201,7 @@ export default function LearningPathPage() {
   const hasMessages = messages.length > 0
 
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)]">
+    <div className="flex flex-col h-[calc(100dvh-4rem)] sm:h-[calc(100vh-4rem)]">
       {hasMessages && (
         <div className="flex-shrink-0 px-4 py-3 border-b border-gray-200 dark:border-gray-800">
           <h1 className="text-lg font-bold text-gray-900 dark:text-white">Make Your Learning Path</h1>

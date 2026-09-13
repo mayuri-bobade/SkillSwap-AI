@@ -83,7 +83,7 @@ export default function SettingsPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+      <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
         <FiSettings className="w-6 h-6 text-primary-500" /> Settings
       </h1>
 

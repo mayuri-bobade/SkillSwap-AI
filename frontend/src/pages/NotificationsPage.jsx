@@ -73,8 +73,8 @@ export default function NotificationsPage() {
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <FiBell className="w-6 h-6 text-primary-500" /> Notifications
         </h1>
         {notifications.some((n) => !n.read) && (

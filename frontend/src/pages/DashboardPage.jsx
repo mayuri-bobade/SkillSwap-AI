@@ -45,9 +45,9 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
             Welcome back, {user?.name?.split(' ')[0]}!
           </h1>
           <p className="text-gray-500 dark:text-gray-400">Here's what's happening with your skill exchange.</p>

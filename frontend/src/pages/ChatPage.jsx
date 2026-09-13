@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useSocket } from '../context/SocketContext'
@@ -26,6 +26,16 @@ export default function ChatPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [searching, setSearching] = useState(false)
+  const selectedConvRef = useRef(null)
+  const conversationsRef = useRef([])
+
+  useEffect(() => {
+    selectedConvRef.current = selectedConv
+  }, [selectedConv])
+
+  useEffect(() => {
+    conversationsRef.current = conversations
+  }, [conversations])
 
   useEffect(() => {
     const fetchConversations = async () => {
@@ -71,8 +81,9 @@ export default function ChatPage() {
     if (!socket) return
 
     const handleMessage = (data) => {
+      const currentConv = selectedConvRef.current
       // Update messages if chat is open
-      if (selectedConv && String(data.conversationId) === String(selectedConv)) {
+      if (currentConv && String(data.conversationId) === String(currentConv)) {
         setMessages((prev) => {
           const incoming = data.message
           const exists = prev.some((m) => {
@@ -92,7 +103,7 @@ export default function ChatPage() {
       setConversations((prev) => {
         const updated = prev.map((c) => {
           if (String(c._id) === String(data.conversationId)) {
-            const isOpen = selectedConv && String(data.conversationId) === String(selectedConv)
+            const isOpen = currentConv && String(data.conversationId) === String(currentConv)
             return { ...c, lastMessage: data.message, lastMessageAt: data.message.createdAt, unreadCount: isOpen ? 0 : (c.unreadCount || 0) + 1 }
           }
           return c
@@ -103,7 +114,7 @@ export default function ChatPage() {
 
     socket.on('new_message', handleMessage)
     return () => socket.off('new_message', handleMessage)
-  }, [socket, selectedConv])
+  }, [socket])
 
   useEffect(() => {
     if (selectedConv && socket) {
@@ -220,7 +231,7 @@ export default function ChatPage() {
   if (loading) return <LoadingSpinner />
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] rounded-2xl overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+    <div className="flex h-[calc(100dvh-4rem)] sm:h-[calc(100vh-8rem)] rounded-2xl overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
       <div className={`${selectedConv ? 'hidden lg:flex' : 'flex'} flex-col w-full lg:w-80 border-r border-gray-200 dark:border-gray-700`}>
         <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">

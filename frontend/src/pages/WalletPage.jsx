@@ -34,7 +34,7 @@ export default function WalletPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+      <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
         <FiDollarSign className="w-6 h-6 text-primary-500" /> Wallet
       </h1>
 

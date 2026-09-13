@@ -96,7 +96,7 @@ export default function MatchPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <FiTarget className="w-6 h-6 text-primary-500" /> AI Skill Matching
         </h1>
         <p className="text-gray-500">Smart matches based on what you teach and want to learn</p>

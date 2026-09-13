@@ -122,10 +122,10 @@ export default function ProfilePage() {
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Profile Header */}
       <div className="card">
-        <div className="flex flex-col sm:flex-row items-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <Avatar src={profile.avatar} name={profile.name} size="xl" />
           <div className="flex-1 text-center sm:text-left">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{profile.name}</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{profile.name}</h1>
             <p className="text-gray-500 dark:text-gray-400">{profile.email}</p>
             {profile.bio && <p className="text-gray-600 dark:text-gray-300 mt-2">{profile.bio}</p>}
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-3 text-sm text-gray-500 dark:text-gray-400">
